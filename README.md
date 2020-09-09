@@ -1,2 +1,2 @@
 # organize-app
-It's my educational project. How about test read in README.md
+It's my educational project. How about test to read in README.md
