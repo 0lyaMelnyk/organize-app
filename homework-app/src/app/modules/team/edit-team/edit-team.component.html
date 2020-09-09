@@ -1,0 +1,10 @@
+<form #form #teamForm="ngForm" (submit)="updateTeam()">
+    <p>Update Team</p>
+    <div class="form-control">
+        <input  matInput type="text" [(ngModel)]="team.name" name="name">
+    </div>
+    <div class="form-control">
+        <input matInput type="text" [(ngModel)]="team.createdAt" name="createdAt">
+    </div>
+    <input type="submit">
+</form>

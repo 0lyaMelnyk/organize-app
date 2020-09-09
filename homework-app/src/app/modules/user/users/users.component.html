@@ -1,0 +1,13 @@
+<div class="user-list">
+    <div *ngFor="let user of users" class="user">
+    <app-user 
+    [user]='user'
+    (deleteUserRequest)="sendDeleteUser($event)"
+    >
+    </app-user>
+    </div>
+    <div class="user">
+        <i class="material-icons md-24" (click)="isCreateUser=!isCreateUser">add</i>
+        <app-create-user *ngIf="isCreateUser" (userCreated)="addUser($event)"></app-create-user>
+    </div>
+</div>

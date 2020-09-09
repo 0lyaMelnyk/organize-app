@@ -1,0 +1,12 @@
+<mat-card class="team">
+    <mat-card-header>
+        <mat-card-title class="team-name">{{team.name}}</mat-card-title>
+       <i class="material-icons nd-24" (click)="isUpdate=true">edit</i>
+       <i (click)="deleteTeam()" class="material-icons md-24" >delete</i>
+   </mat-card-header>
+<mat-card-content>
+    <p class="date">Created at: {{team.createdAt|date:'longDate'}}</p>
+ </mat-card-content> 
+ <app-edit-team *ngIf="isUpdate" [team]="team" 
+ (updateTeamRequest)="teamUpdateHandler($event)"></app-edit-team>
+</mat-card>

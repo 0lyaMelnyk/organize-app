@@ -1,0 +1,9 @@
+<div class="task-list">
+    <div *ngFor="let task of tasks" class="task">
+        <app-task [task]='task'(onDeleteTask)="deleteTaskHandler($event)"></app-task>
+    </div>
+    <div class="task">
+        <i class="material-icons md-24" (click)="isCreateTask=!isCreateTask">add</i>
+        <app-create-task *ngIf="isCreateTask" (teamCreated)="addTask($event)"></app-create-task>
+    </div>
+</div>

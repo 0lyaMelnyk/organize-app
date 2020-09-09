@@ -1,0 +1,32 @@
+<form [formGroup]="taskForm" (ngSubmit)="saveUser()">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" placeholder="Input name"/>
+        <mat-error>This field is required</mat-error>
+     </mat-form-field>
+
+     <mat-form-field appearance="fill">
+        <mat-label>Desciption</mat-label>
+        <input matInput type="text" formControlName="description"/>
+        <mat-error>This field is required</mat-error>
+     </mat-form-field>
+
+   <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Finished at</mat-label>
+    <input matInput [matDatepicker]="picker" placeholder="Finished at" />
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+
+   <mat-form-field appearance="fill">
+    <mat-label>Project id</mat-label>
+    <input matInput type="number" formControlName="projectId" placeholder="Input project id"/>
+ </mat-form-field>
+
+ <mat-form-field appearance="fill">
+    <mat-label>Perfoemer id</mat-label>
+    <input matInput type="number" formControlName="performerId" placeholder="Input performer id"/>
+ </mat-form-field>
+
+   <button mat-raised-button color="primary" type="submit" [disabled]="!taskForm.valid">Submit</button>
+ </form>

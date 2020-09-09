@@ -1,0 +1,32 @@
+<form [formGroup]="projectForm" (ngSubmit)="saveProject()">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" placeholder="Input name"/>
+        <mat-error>This field is required</mat-error>
+     </mat-form-field>
+
+     <mat-form-field appearance="fill">
+        <mat-label>Desciption</mat-label>
+        <input matInput type="text" formControlName="description"/>
+        <mat-error>This field is required</mat-error>
+     </mat-form-field>
+
+   <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Deadline</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="deadline" placeholder="Deadline" />
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+
+   <mat-form-field appearance="fill">
+    <mat-label>Author id</mat-label>
+    <input matInput type="number" formControlName="authorId" placeholder="Input author id"/>
+ </mat-form-field>
+
+ <mat-form-field appearance="fill">
+    <mat-label>Team id</mat-label>
+    <input matInput type="number" formControlName="teamId" placeholder="Input team id"/>
+ </mat-form-field>
+
+   <button mat-raised-button color="primary" type="submit" [disabled]="!projectForm.valid">Submit</button>
+ </form>

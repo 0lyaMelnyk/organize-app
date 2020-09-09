@@ -1,0 +1,14 @@
+<mat-card class="user">
+    <mat-card-header>
+     <mat-card-title class="user-name">{{user.firstName}}  {{user.lastName}}</mat-card-title>
+    <i class="material-icons nd-24" (click)="editUser()">edit</i>
+    <i (click)="deleteUser()" class="material-icons md-24" >delete</i>
+</mat-card-header>
+    <mat-card-content >
+    <p>E-mail: {{user.email}}</p> 
+    <p>Birthday: {{user.birthday | date:'longDate'}}</p>
+    </mat-card-content> 
+    <div class="edit-user" *ngIf="isEditUser">
+        <app-update-user [user]="user" (updateUserRequest)="userUpdateHandler($event)"></app-update-user>
+    </div>
+</mat-card>

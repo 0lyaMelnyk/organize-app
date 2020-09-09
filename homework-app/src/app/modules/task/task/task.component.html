@@ -1,0 +1,17 @@
+<mat-card class="task">
+    <mat-card-header>
+     <mat-card-title class="task-name">{{task.id}}  {{task.name}}</mat-card-title>
+    <i class="material-icons nd-24" (click)="editTask()">edit</i>
+    <i (click)="deleteTask()" class="material-icons md-24" >delete</i>
+</mat-card-header>
+    <mat-card-content >
+    <p>description: {{task.description}}</p> 
+    <p>Created at: {{task.createdAt | date:'longDate'}}</p>
+    <p>Finished at:{{task.finishedAt | date:'longDate'}}</p>
+    <p>Performer id: {{task.performerId}}</p>
+    <p>Project id: {{task.projectId}}</p>
+    </mat-card-content> 
+    <div class="edit-task" *ngIf="isEditTask">
+        <app-edit-task [task]="task" (updateTaskRequest)="taskUpdateHandler($event)"></app-edit-task>
+    </div>
+</mat-card>

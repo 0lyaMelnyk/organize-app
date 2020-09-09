@@ -1,0 +1,13 @@
+<div class="project-list">
+    <div *ngFor="let project of projects" class="project">
+    <app-project 
+    [project]='project'
+    (deleteProjectRequest)="sendDeleteProject($event)"
+    >
+    </app-project>
+    </div>
+    <div class="project">
+        <i class="material-icons md-24" (click)="isCreateProject=!isCreateProject">add</i>
+        <app-create-project *ngIf="isCreateProject" (projectCreated)="addProject($event)"></app-create-project>
+    </div>
+</div>

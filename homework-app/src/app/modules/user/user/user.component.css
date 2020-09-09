@@ -1,0 +1,31 @@
+.user{
+    background-color: #A8DADC;
+    opacity: 0.8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 10px;
+    max-width: max-content;
+}
+
+.user i {
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.user i:hover {
+    color: magenta;
+}
+
+mat-card-header{
+    display: flex;
+    justify-content: space-between;
+}
+.mat-card-title{
+    margin: 0;
+}
+.user-name{
+    display: flex;
+    padding-right:10px ;
+}

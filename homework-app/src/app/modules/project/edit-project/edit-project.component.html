@@ -1,0 +1,22 @@
+<form #form #projectForm="ngForm" (submit)="updateProject()">
+    <p>Update Project</p>
+    <div class="form-control">
+        <input matInput type="text" [(ngModel)]="project.name" name="name">
+    </div>
+    <div class="form-control">
+        <input matInput type="text" [(ngModel)]="project.description" name="description">
+    </div>
+    <div class="form-control">
+        <input matInput type="text" [(ngModel)]="project.createdAt" name="createdAt">
+    </div>
+    <div class="form-control">
+        <input matInput type="text" [(ngModel)]="project.deadline" name="deadline">
+    </div>
+    <div class="form-control">
+        <input matInput type="text" [(ngModel)]="project.teamId" name="teamId">
+    </div>
+    <div class="form-control">
+        <input matInput type="text" [(ngModel)]="project.authorId" name="authorId">
+    </div>
+    <input type="submit">
+</form>

@@ -1,0 +1,17 @@
+<mat-card class="project">
+    <mat-card-header>
+     <mat-card-title class="project-name">{{project.id}}  {{project.name}}</mat-card-title>
+    <i class="material-icons nd-24" (click)="editProject()">edit</i>
+    <i (click)="deleteProject()" class="material-icons md-24" >delete</i>
+</mat-card-header>
+    <mat-card-content >
+    <p>description: {{project.description}}</p> 
+    <p>Created at: {{project.createdAt | date:'longDate'}}</p>
+    <p>Deadline:{{project.deadline | date:'longDate'}}</p>
+    <p>Author id: {{project.authorId}}</p>
+    <p>Team id: {{project.teamId}}</p>
+    </mat-card-content> 
+    <div class="edit-project" *ngIf="isEditProject">
+        <app-edit-project [project]="project" (updateProjectRequest)="projectUpdateHandler($event)"></app-edit-project>
+    </div>
+</mat-card>

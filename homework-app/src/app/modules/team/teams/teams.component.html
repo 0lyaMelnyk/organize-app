@@ -1,0 +1,9 @@
+<div class="team-list">
+    <div *ngFor="let team of teams" class="team">
+        <app-team [team]='team'(teamDeleteRequest)="sendDeleteTeam($event)"></app-team>
+    </div>
+    <div class="team">
+        <i class="material-icons md-24" (click)="isCreateTeam=!isCreateTeam">add</i>
+        <app-create-team *ngIf="isCreateTeam" (teamCreated)="addTeam($event)"></app-create-team>
+    </div>
+</div>
